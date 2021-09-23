@@ -88,6 +88,9 @@ export type SplitProps = {
    * These values are debounced at 500ms to prevent spamming this event.
    */
   onMeasuredSizesChanged?: (sizes: SplitMeasuredSizes) => void;
+
+  percent: number | undefined;
+  setPercent: (percent: number | undefined) => void;
 };
 
 export const Split = (props: React.PropsWithChildren<SplitProps>): JSX.Element => {
@@ -106,6 +109,8 @@ export const Split = (props: React.PropsWithChildren<SplitProps>): JSX.Element =
     },
     onSplitChanged,
     onMeasuredSizesChanged,
+    percent,
+    setPercent
   } = props;
 
   const [contentMeasuredDimensions, setContentMeasuredDimensions] = React.useState<MeasuredDimensions>({
@@ -134,7 +139,7 @@ export const Split = (props: React.PropsWithChildren<SplitProps>): JSX.Element =
     [horizontal, splitterMeasuredDimensions]
   );
 
-  const [percent, setPercent] = React.useState<number | undefined>(undefined);
+  // const [percent, setPercent] = React.useState<number | undefined>(undefined);
 
   const [clientStart, setClientStart] = React.useState(0);
   const [primaryStart, setPrimaryStart] = React.useState(0);
