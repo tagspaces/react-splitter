@@ -1,5 +1,5 @@
 {
-  "name": "@geoffcox/react-splitter",
+  "name": "ts-react-splitter",
   "version": "2.1.1",
   "description": "A splitter for React components that leverages CSS grid templates for simple and consistent resizing.",
   "main": "build/index.js",
